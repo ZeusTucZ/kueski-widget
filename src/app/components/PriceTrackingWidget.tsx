@@ -129,32 +129,9 @@ export function PriceTrackingWidget({
           <Sparkles className="w-5 h-5 text-green-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-green-900">Good time to buy!</p>
-            <p className="text-xs text-green-700">Price is close to your target</p>
           </div>
         </motion.div>
       )}
-
-      {/* Progress to Target Price */}
-      <div className="mb-4">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-700">Target: {currency}{targetPrice.toFixed(2)}</span>
-          <span className="text-sm text-gray-600">
-            {currency}{priceDifference.toFixed(2)} away
-          </span>
-        </div>
-        <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${Math.min(100, percentToTarget)}%` }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className={`h-full ${
-              isGoodDeal
-                ? 'bg-gradient-to-r from-green-500 to-green-600'
-                : 'bg-gradient-to-r from-[#0057FF] to-[#0041CC]'
-            }`}
-          />
-        </div>
-      </div>
 
       {/* Current Price Display */}
       <div className="bg-gradient-to-br from-[#F5F7FA] to-[#E8EDF5] rounded-xl p-4 mb-4">
